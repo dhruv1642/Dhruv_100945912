@@ -1,12 +1,12 @@
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/My Project 40157/dhruv-100945912/app:latest', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/My Project 40157/Dhruv_100945912/app:latest', '.']
     id: 'Build Docker Image'
 
   # Step 2: Push the Docker image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/My Project 40157/dhruv-100945912/app:latest']
+    args: ['push', 'us-central1-docker.pkg.dev/My Project 40157/Dhruv_100945912/app:latest']
     id: 'Push to Artifact Registry'
   
   # Step 3: Deploy the Docker image to Cloud Run
@@ -17,7 +17,7 @@ steps:
       'deploy', 
       'app',
       '--image', 
-      'us-central1-docker.pkg.dev/My Project 40157/dhruv-100945912/app:latest',
+      'us-central1-docker.pkg.dev/My Project 40157/Dhruv_100945912/app:latest',
       '--region', 
       'us-central1',
       '--platform',
